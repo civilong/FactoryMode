@@ -1,4 +1,4 @@
-#include "QObject.h"
+#include "../include/QObject.h"
 
 ash::QObject::QObject() {
 

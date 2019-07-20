@@ -1,7 +1,7 @@
-#include "QObject.h"
-#include "Apple.h"
-#include "Orange.h"
-#include "Factory.h"
+#include "include/QObject.h"
+#include "include/Apple.h"
+#include "include/Orange.h"
+#include "include/Factory.h"
 #include <iostream>
 #include <string>
 
