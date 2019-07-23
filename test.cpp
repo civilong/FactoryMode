@@ -1,18 +1,24 @@
 #include "include/QObject.h"
 #include "include/Apple.h"
 #include "include/Orange.h"
-#include "include/Factory.h"
+#include "include/Parse.h"
 #include <iostream>
-#include <string>
+#include <vector>
+#include <fstream>
 
 using namespace std;
 
+vector<ash::QObject*> gvecQObjects;
+FILE *gFile = fopen("/home/zouwei/Desktop/cpp/fwrite/test", "rb+");
+
 int main() {
-    int ifruit1 = 0x1;
-    ash::QObject *test1 = getObjectFromName(ifruit1);
-    test1->parse();
-    int ifruit2 = 0x2;
-    ash::QObject *test2 = getObjectFromName(ifruit2);
-    test2->parse();
+    if(gFile != NULL) {
+        parseObject();
+    }
+    
+    vector<ash::QObject*>::const_iterator it = gvecQObjects.begin();
+    ash::Apple *apple = dynamic_cast<ash::Apple*>(*it);
+    apple->print();
+
     return 0;
 }

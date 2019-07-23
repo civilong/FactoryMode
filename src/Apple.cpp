@@ -1,32 +1,25 @@
 #include "../include/Apple.h"
 #include <iostream>
 #include <string.h>
+#include "../include/Parse.h"
 using namespace std;
 
-ash::Apple::Apple() {
-    fPrice  = 5.0;
-    strColor = "Red";
-}
-
 void ash::Apple::parse() {
-    getColor();
-    getPrice();
+    iPrice = parseInt();
+    strColor = parseString();
 }
 
-void ash::Apple::setPrice(const float &newPrice) {
-    fPrice = newPrice;
+const int& ash::Apple::getPrice() {
+    cout<< "The price of apple is " << iPrice << endl;
+    return iPrice;
 }
 
-float ash::Apple::getPrice() {
-    cout<< "The price of apple is " << fPrice << endl;
-    return fPrice;    
-}
-
-void ash::Apple::setColor(const std::string &newColor) {
-    strColor = newColor;
-}
-
-std::string ash::Apple::getColor() {
+const std::string& ash::Apple::getColor() {
     cout << "The color of apple is " << strColor << endl;
     return strColor;
+}
+
+void ash::Apple::print() {
+    cout<< "The price of apple is " << iPrice << endl;
+    cout << "The color of apple is " << strColor << endl;
 }

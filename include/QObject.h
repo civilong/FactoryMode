@@ -7,9 +7,7 @@ namespace ash
 {
     class QObject {
     public:
-        QObject();
         virtual void parse();
-        ~QObject();
     };
 }
 

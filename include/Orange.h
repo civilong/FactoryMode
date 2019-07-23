@@ -3,19 +3,19 @@
 #include "QObject.h"
 #include <string>
 
+using namespace std;
+
 namespace ash
 {
     class Orange : public ash::QObject {
     public:
-        Orange();
         void parse();
-        bool isSweet();
-        void setSweet(const bool &flag);
-        std::string getColor();
-        void setColor(const std::string &newColor);
-        void setPrice(const float &newPrice);
-        float getPrice();
 
+        const bool& getSweet();
+        const string& getColor();
+        const float& getPrice();
+
+        void print();
     private:
         bool bisSweet;
         std::string strColor;
