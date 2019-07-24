@@ -8,12 +8,15 @@ void ash::Orange::parse() {
     strColor = parseString();
 }
 
-const string& ash::Orange::getColor() {
-    cout << "The color of orange is " << strColor << endl;
+const string& ash::Orange::getColor() {    
     return strColor;
 }
 
-const float& ash::Orange::getPrice() {
-    cout<<"The price of orange is " << fPrice <<endl;
+const float& ash::Orange::getPrice() {   
     return fPrice;
+}
+
+void ash::Orange::print() {
+    cout <<"The price of orange is " << fPrice <<endl;
+    cout << "The color of orange is " << strColor << endl;
 }

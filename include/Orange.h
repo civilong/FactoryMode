@@ -11,13 +11,11 @@ namespace ash
     public:
         void parse();
 
-        const bool& getSweet();
         const string& getColor();
         const float& getPrice();
 
         void print();
     private:
-        bool bisSweet;
         std::string strColor;
         float fPrice;
     };

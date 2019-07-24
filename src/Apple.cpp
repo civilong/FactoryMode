@@ -5,21 +5,19 @@
 using namespace std;
 
 void ash::Apple::parse() {
-    iPrice = parseInt();
+    fPrice = parseFloat();
     strColor = parseString();
 }
 
-const int& ash::Apple::getPrice() {
-    cout<< "The price of apple is " << iPrice << endl;
-    return iPrice;
+const float& ash::Apple::getPrice() {
+    return fPrice;
 }
 
 const std::string& ash::Apple::getColor() {
-    cout << "The color of apple is " << strColor << endl;
     return strColor;
 }
 
 void ash::Apple::print() {
-    cout<< "The price of apple is " << iPrice << endl;
+    cout << "The price of apple is " << fPrice << endl;
     cout << "The color of apple is " << strColor << endl;
 }

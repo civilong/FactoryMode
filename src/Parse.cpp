@@ -14,6 +14,10 @@ ash::QObject* getObjectFromName(const int &itype) {
     case 0x2:
         return new ash::Orange;
         break;
+    case 0x3:
+        cout<<"new a fruit"<<endl;
+        return new ash::Fruit;
+        break;
     default:
         cout << "No such class!" << endl;
         return new ash::QObject;
@@ -22,8 +26,10 @@ ash::QObject* getObjectFromName(const int &itype) {
 }
 
 int parseInt() {
+    cout<<"parsing int"<<endl;
     int i;
     fread(&i, sizeof(int), 1, gFile);
+    cout<<i<<endl;
     return i;
 }
 
@@ -34,18 +40,22 @@ float parseFloat() {
 }
 
 string parseString() {
+    cout<<"parsing string"<<endl;
     int ilength = parseInt();
-    string str;
-    fread(&str, ilength, 1, gFile);
+    char* temp = new char[ilength];
+    fread(temp, ilength, 1, gFile);
+    string str(temp);
+    delete [] temp;
+    cout<<str<<endl;
     return str;
 }
 
 ash::QObject* parseObject() {
     int itype = parseInt();
     ash::QObject *obj = getObjectFromName(itype);
+    gvecQObjects.push_back(obj);
     if(obj != NULL) {
         obj->parse();
-        gvecQObjects.push_back(obj);
         return obj;
     }
     else {

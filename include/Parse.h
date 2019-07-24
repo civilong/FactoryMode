@@ -3,6 +3,7 @@
 #include "QObject.h"
 #include "Apple.h"
 #include "Orange.h"
+#include "Fruit.h"
 #include <string>
 
 using namespace std;

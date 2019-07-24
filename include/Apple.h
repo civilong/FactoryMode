@@ -13,13 +13,13 @@ namespace ash
     public:
         void parse();
 
-        const int& getPrice();
+        const float& getPrice();
         const string& getColor();
 
         void print();
         
     private:
-        int iPrice;
+        float fPrice;
         std::string strColor;
     };
 }
